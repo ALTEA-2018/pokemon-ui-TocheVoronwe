@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.jupiter.api.Assertions.*;
 
 class IndexControllerTest {
 
