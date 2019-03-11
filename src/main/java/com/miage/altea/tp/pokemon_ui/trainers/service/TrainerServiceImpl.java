@@ -1,6 +1,6 @@
-package com.miage.altea.tp.pokemon_ui.trainer.service;
+package com.miage.altea.tp.pokemon_ui.trainers.service;
 
-import com.miage.altea.tp.pokemon_ui.trainer.bo.Trainer;
+import com.miage.altea.tp.pokemon_ui.trainers.bo.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

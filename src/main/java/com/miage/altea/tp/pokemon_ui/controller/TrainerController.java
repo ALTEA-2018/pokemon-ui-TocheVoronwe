@@ -1,6 +1,6 @@
 package com.miage.altea.tp.pokemon_ui.controller;
 
-import com.miage.altea.tp.pokemon_ui.trainer.service.TrainerService;
+import com.miage.altea.tp.pokemon_ui.trainers.service.TrainerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
