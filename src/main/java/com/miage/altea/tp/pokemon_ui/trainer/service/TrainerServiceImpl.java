@@ -1,7 +1,5 @@
 package com.miage.altea.tp.pokemon_ui.trainer.service;
 
-import com.miage.altea.tp.pokemon_ui.pokemonTypes.bo.PokemonType;
-import com.miage.altea.tp.pokemon_ui.pokemonTypes.service.PokemonTypeService;
 import com.miage.altea.tp.pokemon_ui.trainer.bo.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -36,7 +34,7 @@ public class TrainerServiceImpl implements TrainerService{
         this.restTemplate = restTemplate;
     }
 
-    @Value("${pokemonType.service.url}")
+    @Value("${trainer.service.url}")
     void setPokemonTypeServiceUrl(String pokemonServiceUrl) {
         this.url = pokemonServiceUrl;
     }

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PokemonTypeController {
-    PokemonTypeService pokemonTypeService;
+    private PokemonTypeService pokemonTypeService;
     @GetMapping("/pokedex")
     public ModelAndView pokedex(){
         var modelAndView = new ModelAndView("pokedex");
