@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 public class Trainer {
-    public String Name;
+    public String name;
     public List<PokemonType> team;
     public String password;
 }
