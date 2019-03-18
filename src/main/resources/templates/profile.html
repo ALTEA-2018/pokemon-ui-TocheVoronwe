@@ -3,19 +3,19 @@
 <body>
 
 <div class="container">
-    <h1 class="pt-md-5 pb-md-5">Trainers</h1>
+    {{#trainer}}
+    <h1 class="pt-md-5 pb-md-5">{{name}}'s pokemons</h1>
 
     <div class="card-deck">
-        {{#trainer}}
-        <h4 class="my-0 font-weight-normal">{{name}}</h4>
+
         <div class="col-md-3">
-                {{#team}}
-                <div class="card shadow-sm mb-3">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">{{type.name}}
-                            <span class="badge badge-primary">Id : {{pokemonType}}</span></h4>
-                    </div>
+            {{#team}}
+            <div class="card shadow-sm mb-3">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{type.name}}
+                        <span class="badge badge-primary">Id : {{pokemonType}}</span></h4>
                 </div>
+            </div>
             <div class="card-body">
                 <div>
                     <div>
