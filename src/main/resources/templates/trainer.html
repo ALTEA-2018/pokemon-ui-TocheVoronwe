@@ -7,30 +7,32 @@
 
     <div class="card-deck">
         {{#trainers}}
+        <h4 class="my-0 font-weight-normal">{{name}}</h4>
         <div class="col-md-3">
-            <div class="card shadow-sm mb-3">
-                <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">{{name}}</h4>
-                </div>
-            </div>
-            <div class="card-body">
                 {{#team}}
+                <div class="card shadow-sm mb-3">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">{{type.name}}
+                            <span class="badge badge-primary">Id : {{pokemonType}}</span></h4>
+                    </div>
+                </div>
+            <div class="card-body">
                 <div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{sprites.front_default}}" class="d-block w-100">
+                    <div>
+                        <div>
+                            <img src="{{type.sprites.front_default}}" class="d-block w-100">
                         </div>
-                        <div class="carousel-item">
-                            <img src="{{sprites.back_default}}" class="d-block w-100">
+                        <div>
+                            <img src="{{type.sprites.back_default}}" class="d-block w-100">
                         </div>
                     </div>
                 </div>
-                <span class="badge badge-primary">Speed : {{stats.speed}}</span>
-                <span class="badge badge-primary">Attack : {{stats.attack}}</span>
-                <span class="badge badge-primary">Defense : {{stats.defense}}</span>
-                <span class="badge badge-primary">HP : {{stats.hp}}</span>
+                <span class="badge badge-primary">Speed : {{type.stats.speed}}</span>
+                <span class="badge badge-primary">Attack : {{type.stats.attack}}</span>
+                <span class="badge badge-primary">Defense : {{type.stats.defense}}</span>
+                <span class="badge badge-primary">HP : {{type.stats.hp}}</span>
+                <span class="badge badge-primary">Level: {{level}}</span>
                 {{#types}}
-                <span class="badge badge-primary">{{.}}</span>
                 {{/types}}
                 {{/team}}
             </div>

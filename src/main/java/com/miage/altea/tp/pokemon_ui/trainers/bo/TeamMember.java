@@ -4,12 +4,11 @@ import com.miage.altea.tp.pokemon_ui.pokemonTypes.bo.PokemonType;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
-public class Trainer {
-    public String name;
-    public List<TeamMember> team;
-    public String password;
+public class TeamMember {
+    int id;
+    int pokemonType;
+    int level;
+    PokemonType type;
 }
