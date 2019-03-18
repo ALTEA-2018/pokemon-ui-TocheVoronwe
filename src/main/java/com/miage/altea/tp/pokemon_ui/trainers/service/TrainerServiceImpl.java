@@ -2,6 +2,7 @@ package com.miage.altea.tp.pokemon_ui.trainers.service;
 
 import com.miage.altea.tp.pokemon_ui.trainers.bo.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -14,7 +15,7 @@ import java.util.List;
 public class TrainerServiceImpl implements TrainerService{
     private String url;
 
-    private RestTemplate restTemplate = new RestTemplate();
+    private RestTemplate restTemplate;
 
     public List<Trainer> listTrainers() {
         var res = restTemplate.getForObject(url + "/trainers", Trainer[].class);
@@ -30,7 +31,8 @@ public class TrainerServiceImpl implements TrainerService{
     }
 
     @Autowired()
-    void setRestTemplate(RestTemplate restTemplate) {
+    @Qualifier("trainerApiRestTemplate")
+    void setTrainerApiRestTemplate(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 

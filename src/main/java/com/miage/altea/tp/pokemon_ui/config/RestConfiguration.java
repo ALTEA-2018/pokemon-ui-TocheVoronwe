@@ -12,9 +12,9 @@ import java.util.ArrayList;
 @Configuration
 public class RestConfiguration {
 
-    @Value("${spring.security.user.name)")
+    @Value("${spring.security.user.name}")
     private String username;
-    @Value("${spring.security.user.password")
+    @Value("${spring.security.user.password}")
     private String password;
 
     @Bean

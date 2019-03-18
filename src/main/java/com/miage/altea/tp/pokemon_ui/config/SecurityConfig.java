@@ -5,6 +5,7 @@ import com.miage.altea.tp.pokemon_ui.trainers.service.TrainerService;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -22,11 +23,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private TrainerService trainerService;
 
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
 
+    @Bean
     public UserDetailsService userDetailsService() {
         return username -> Optional.ofNullable(trainerService.getTrainer(username))
                 .map(trainer ->
