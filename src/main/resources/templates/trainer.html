@@ -5,17 +5,18 @@
 <div class="container">
     <h1 class="pt-md-5 pb-md-5">Trainers</h1>
 
+    {{#trainers}}
     <div class="card-deck">
-        {{#trainer}}
+
         <h4 class="my-0 font-weight-normal">{{name}}</h4>
         <div class="col-md-3">
-                {{#team}}
-                <div class="card shadow-sm mb-3">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">{{type.name}}
-                            <span class="badge badge-primary">Id : {{pokemonType}}</span></h4>
-                    </div>
+            {{#team}}
+            <div class="card shadow-sm mb-3">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{type.name}}
+                        <span class="badge badge-primary">Id : {{pokemonType}}</span></h4>
                 </div>
+            </div>
             <div class="card-body">
                 <div>
                     <div>
@@ -32,13 +33,11 @@
                 <span class="badge badge-primary">Defense : {{type.stats.defense}}</span>
                 <span class="badge badge-primary">HP : {{type.stats.hp}}</span>
                 <span class="badge badge-primary">Level: {{level}}</span>
-                {{#types}}
-                {{/types}}
                 {{/team}}
             </div>
         </div>
     </div>
-    {{/trainer}}
+    {{/trainers}}
 </div>
 
 </body>
