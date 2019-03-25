@@ -25,8 +25,7 @@ public class TrainerServiceImpl implements TrainerService {
         List<Trainer> trainers = new ArrayList<>();
         if (res != null) {
             trainers = Arrays.asList(res);
-            trainers.parallelStream().flatMap(trainer -> trainer.team.stream()).forEach(pokemon ->
-                    setPokemonType(pokemon));
+            trainers.parallelStream().flatMap(trainer -> trainer.team.stream()).forEach(this::setPokemonType);
         }
         return trainers;
     }
@@ -34,7 +33,7 @@ public class TrainerServiceImpl implements TrainerService {
     public Trainer getTrainer(String name) {
         var trainer = restTemplate.getForObject(url + "/trainers/" + name, Trainer.class);
         if (trainer != null) {
-            trainer.team.forEach(teamMember -> setPokemonType(teamMember));
+            trainer.team.forEach(this::setPokemonType);
         }
         return trainer;
 
