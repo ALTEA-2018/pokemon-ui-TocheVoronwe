@@ -29,8 +29,7 @@ public class PokemonTypeServiceImpl implements PokemonTypeService {
 
     @CachePut("pokemons-type")
     public PokemonType getPokemonById(int id) {
-        var res = restTemplate.getForObject(url + "/pokemon-types/" + id, PokemonType.class);
-        return res;
+        return restTemplate.getForObject(url + "/pokemon-types/" + id, PokemonType.class);
     }
 
     @Autowired()

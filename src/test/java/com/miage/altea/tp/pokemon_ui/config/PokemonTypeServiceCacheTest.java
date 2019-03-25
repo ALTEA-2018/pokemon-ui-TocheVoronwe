@@ -26,7 +26,7 @@ class PokemonTypeServiceCacheTest {
     @Mock
     RestTemplate restTemplate;
 
-    @Value("${pokemonType.service.url}/pokemon-types/{id}")
+    @Value("${pokemonType.service.url}/pokemon-types/25")
     String expectedUrl;
 
     @Autowired
@@ -40,7 +40,7 @@ class PokemonTypeServiceCacheTest {
         var pikachu = new PokemonType();
         pikachu.setId(25);
         pikachu.setName("Pikachu");
-        when(restTemplate.getForObject(expectedUrl, PokemonType.class, 25)).thenReturn(pikachu);
+        when(restTemplate.getForObject(expectedUrl, PokemonType.class)).thenReturn(pikachu);
     }
 
     @Test
@@ -48,7 +48,7 @@ class PokemonTypeServiceCacheTest {
         pokemonTypeService.getPokemonById(25);
 
         // rest template should have been called once
-        verify(restTemplate).getForObject(expectedUrl, PokemonType.class, 25);
+        verify(restTemplate).getForObject(expectedUrl, PokemonType.class);
 
         pokemonTypeService.getPokemonById(25);
 
