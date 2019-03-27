@@ -23,7 +23,8 @@ public class TrainerController {
     public ModelAndView profile() {
         var connectedUser = getConnectedUsername();
         var modelAndView = new ModelAndView("profile");
-        modelAndView.addObject("trainers", trainerService.getTrainer(connectedUser));
+        var trainer = trainerService.getTrainer(connectedUser);
+        modelAndView.addObject("trainer", trainer);
         return modelAndView;
 
     }
