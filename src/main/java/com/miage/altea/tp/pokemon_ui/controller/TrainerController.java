@@ -12,9 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class TrainerController {
     TrainerService trainerService;
 
-    @GetMapping("/trainer")
+    @GetMapping("/trainers")
     public ModelAndView trainer(){
-        var modelAndView = new ModelAndView("trainer");
+        var modelAndView = new ModelAndView("trainers");
         modelAndView.addObject("trainers", trainerService.listTrainers());
         return modelAndView;
     }
@@ -23,7 +23,7 @@ public class TrainerController {
     public ModelAndView profile() {
         var connectedUser = getConnectedUsername();
         var modelAndView = new ModelAndView("profile");
-        modelAndView.addObject("trainer", trainerService.getTrainer(connectedUser));
+        modelAndView.addObject("trainers", trainerService.getTrainer(connectedUser));
         return modelAndView;
 
     }
